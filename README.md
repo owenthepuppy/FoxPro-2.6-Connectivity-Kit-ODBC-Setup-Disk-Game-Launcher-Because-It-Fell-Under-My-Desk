@@ -16,6 +16,8 @@ Steam and Playnite so far, maybe I'll add more at some point (really just like s
 
 Yeah, I wanted cancel logic and retry logic, didn't go super well, but it works! (sarcastic)
 
+Also, if you look through commit history, you can see the commit messages getting worse (this is when I was making the setup_disks.py program, if you look at it, you'll see. Along with a bad headache you'll probably get)
+
 ## What's this name?
 
 Epic, IKR.
