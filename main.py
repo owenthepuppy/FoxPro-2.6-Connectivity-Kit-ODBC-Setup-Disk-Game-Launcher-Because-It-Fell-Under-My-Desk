@@ -6,6 +6,7 @@ import win32api
 
 
 CONFIG_PATH = os.path.join(os.environ["APPDATA"], "FP26CKOSDGLBIFUMD", "library.toml")
+PAUSE_FILE = os.path.join(os.environ["APPDATA"], "FP26CKOSDGLBIFUMD", "pause")
 
 disk_in = False
 already_launched = False
@@ -13,16 +14,18 @@ app_info = None
 
 
 def run_game(app_type, app):
-    if app_type == "playnite":
-        os.startfile(f"playnite://playnite/start/{app}")
-    elif app_type == "steam":
-        os.startfile(f"steam://rungameid/{app}")
+    if not os.path.exists(PAUSE_FILE):
+        if app_type == "playnite":
+            os.startfile(f"playnite://playnite/start/{app}")
+        elif app_type == "steam":
+            os.startfile(f"steam://rungameid/{app}")
 
 
 def stop_game(game_process):
-    for proc in psutil.process_iter(["name"]):
-        if proc.info["name"].lower() == game_process.lower():
-            proc.terminate()
+    if not os.path.exists(PAUSE_FILE):
+        for proc in psutil.process_iter(["name"]):
+            if proc.info["name"].lower() == game_process.lower():
+                proc.terminate()
 
 
 while True:
