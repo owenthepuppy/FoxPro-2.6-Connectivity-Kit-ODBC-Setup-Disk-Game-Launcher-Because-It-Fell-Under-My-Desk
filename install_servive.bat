@@ -7,4 +7,5 @@ if %errorlevel% neq 0 (
 
 schtasks /create /tn "FoxPro 2.6 Connectivity Kit ODBC Setup Disk Game Launcher Because It Fell Under My Desk" /tr "pythonw.exe \"%~dp0main.py\"" /sc onlogon /rl highest /f
 echo If there's no errors above, the install probably worked
+echo You will need to re-login or start the process from process monitor to start the app
 pause

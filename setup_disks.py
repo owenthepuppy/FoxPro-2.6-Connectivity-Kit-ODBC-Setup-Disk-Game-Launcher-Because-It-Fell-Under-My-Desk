@@ -143,7 +143,6 @@ def setup_disk():
         print("Setup complete!")  # that was painful
         print("Now, eject the disk and press any key to continue")
         questionary.press_any_key_to_continue().ask()
-        os.remove(PAUSE_FILE)
 
 
 CONFIG_PATH = os.path.join(os.environ["APPDATA"], "FP26CKOSDGLBIFUMD", "library.toml")
@@ -152,11 +151,20 @@ PAUSE_FILE = os.path.join(os.environ["APPDATA"], "FP26CKOSDGLBIFUMD", "pause")
 print("Welcome to the floppy disk setup app!")
 while True:
     match questionary.select(
-        "Please choose an option:", ["Setup individual disk", "Bulk Setup", "Exit"]
+        "Please choose an option:",
+        [
+            "Setup disk",
+            "Open config file (required to delete something)",
+            "Exit",
+        ],
     ).ask():
         case "Exit":
             print("Goodbye!")
             break
-        case "Setup individual disk":
+        case "Setup disk":
             open(PAUSE_FILE, "w").close()
             setup_disk()
+            os.remove(PAUSE_FILE)
+        case "Open config file (required to delete something)":
+            print("Opening...")
+            os.startfile(CONFIG_PATH)

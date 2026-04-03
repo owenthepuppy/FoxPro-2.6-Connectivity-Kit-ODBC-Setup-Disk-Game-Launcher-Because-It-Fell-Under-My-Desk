@@ -3,7 +3,7 @@ import os
 import tomllib
 import psutil
 import win32api
-
+import tomli_w
 
 CONFIG_PATH = os.path.join(os.environ["APPDATA"], "FP26CKOSDGLBIFUMD", "library.toml")
 PAUSE_FILE = os.path.join(os.environ["APPDATA"], "FP26CKOSDGLBIFUMD", "pause")
@@ -27,6 +27,11 @@ def stop_game(game_process):
             if proc.info["name"].lower() == game_process.lower():
                 proc.terminate()
 
+
+if not os.path.exists(CONFIG_PATH):
+    os.makedirs(os.path.dirname(CONFIG_PATH), exist_ok=True)
+    with open(CONFIG_PATH, "wb") as f:
+        tomli_w.dump({"disks": {}}, f)
 
 while True:
     if os.path.exists("A:\\"):
