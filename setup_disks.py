@@ -145,11 +145,6 @@ def setup_disk():
         questionary.press_any_key_to_continue().ask()
 
 
-def bulk_get_floppy_id():
-
-    get_floppy_id()
-
-
 CONFIG_PATH = os.path.join(os.environ["APPDATA"], "FP26CKOSDGLBIFUMD", "library.toml")
 PAUSE_FILE = os.path.join(os.environ["APPDATA"], "FP26CKOSDGLBIFUMD", "pause")
 
