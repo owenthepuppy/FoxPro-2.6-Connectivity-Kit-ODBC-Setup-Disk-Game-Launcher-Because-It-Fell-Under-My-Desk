@@ -145,16 +145,32 @@ def setup_disk():
         questionary.press_any_key_to_continue().ask()
 
 
+def bulk_get_floppy_id():
+
+    get_floppy_id()
+
+
 CONFIG_PATH = os.path.join(os.environ["APPDATA"], "FP26CKOSDGLBIFUMD", "library.toml")
 PAUSE_FILE = os.path.join(os.environ["APPDATA"], "FP26CKOSDGLBIFUMD", "pause")
 
 print("Welcome to the floppy disk setup app!")
 while True:
+    if os.path.exists(PAUSE_FILE):
+        if questionary.confirm(
+            "It appears the program may have crashed, stopping games from running, would you like to delete the pasue file to fix this?"
+        ).ask():
+            questionary.press_any_key_to_continue(
+                "Please make sure all disks are removed, then press any key to continue..."
+            )
+            os.remove(PAUSE_FILE)
+            print("Everything should work now.")
+
     match questionary.select(
         "Please choose an option:",
         [
             "Setup disk",
             "Open config file (required to delete something)",
+            "Get floppy ID bulk",
             "Exit",
         ],
     ).ask():
@@ -168,3 +184,17 @@ while True:
         case "Open config file (required to delete something)":
             print("Opening...")
             os.startfile(CONFIG_PATH)
+        case "Get floppy ID bulk":
+            print("Do it without a floppy disk inserted to stop the program.")
+            while True:
+                questionary.press_any_key_to_continue(
+                    "Insert the disk, then press any key:"
+                ).ask()
+                try:
+                    print(get_floppy_id())
+                except Exception as e:
+                    print("Error:", e)
+                    if not questionary.confirm(
+                        "There was a problem reading the disk, would you like to try again?"
+                    ).ask():
+                        break
