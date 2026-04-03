@@ -1,0 +1,4 @@
+questionary
+psutil
+pywin32
+tomli_w
