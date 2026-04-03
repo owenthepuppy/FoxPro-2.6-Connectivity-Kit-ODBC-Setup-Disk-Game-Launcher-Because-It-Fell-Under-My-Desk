@@ -26,7 +26,15 @@ Lore explanation:
 
 So I was about to make the program, I was grabbing all my old floppy disks and one fell to like on the radiator behind/under my desk, I felt that I must pick it up and I can't just leave it there so I finally grabbed it out. The disk is a (I think clone of) the "FoxPro 2.6 Connectivity Kit ODBC Setup Disk." I thought the name was funny so, I named the project after it. After looking online, this disk is completley gone, you can't download it AT ALL, as far as I could find, only newer versions. I made a copy of it, and it is now preserved for hopefully forever. The file is in this project folder but, due to copyright stuff, I must put it in the gitignore file. Though at least it's probably one of the longest project names ever! (my vscode top bar is insane) 
 
+## foxpro26_connectivity_kit_odbc_setup.img is really there?
 
+Yes, here's proof:
+
+<img src="file:///D:/coding/python/FoxPro%202.6%20Connectivity%20Kit%20ODBC%20Setup%20Disk%20Game%20Launcher%20Because%20It%20Fell%20Under%20My%20Desk/assets/foxpro26_connectivity_kit_odbc_setup.img.png" title="" alt="Proof" width="320">
+
+## What theme is that?
+
+Catppuccin Mocha, I also [this animation thing](https://marketplace.visualstudio.com/items?itemName=BrandonKirbyson.vscode-animations)
 
 ## Why did you make this?
 
@@ -66,8 +74,6 @@ pip install -r requirments.txt
 
 Edit library.toml
 
-
-
 ## What is that Appdata folder name?
 
 It stands for "FoxPro 2.6 Connectivity Kit ODBC Setup Disk Game Launcher Because It Fell Under My Desk"
@@ -79,8 +85,6 @@ Not until I move over to linux (if I do), I might soon but probably not, also wh
 ## Mac support?
 
 Never! PORT IT YOURSELF!!!
-
-
 
 ## Can I have a config example?
 
@@ -96,8 +100,6 @@ process = "portal2.exe"
 app_type = "steam"
 app = "400"
 process = "hl2.exe"
-
-
 ```
 
 Replace DISKIDHERE with the ID of the floppy
