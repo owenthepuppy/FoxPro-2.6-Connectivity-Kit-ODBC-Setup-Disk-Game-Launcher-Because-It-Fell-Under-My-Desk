@@ -30,7 +30,7 @@ So I was about to make the program, I was grabbing all my old floppy disks and o
 
 Yes, here's proof:
 
-<img src="file:///D:/coding/python/FoxPro%202.6%20Connectivity%20Kit%20ODBC%20Setup%20Disk%20Game%20Launcher%20Because%20It%20Fell%20Under%20My%20Desk/assets/foxpro26_connectivity_kit_odbc_setup.img.png" title="" alt="Proof" width="320">
+![Proof](assets/foxpro26_connectivity_kit_odbc_setup.img.png)
 
 ## What theme is that?
 
